@@ -1,0 +1,11 @@
+Interface	Address/ID	Read response?	Save response?	Wait after [s]	COMMAND	COMMENT	PROGRES	TIME	DATA	Respect limits?	Limit LO	Limit HI	Limit Status	LABEL
+						==================================================================								
+CALL_SUBSCRIPT	NAME			0	P01_step;;<VOLTAGE>==9.0									
+CALL_SUBSCRIPT	NAME			0	P01_step;;<VOLTAGE>==8.0									
+CALL_SUBSCRIPT	NAME			0	P01_step;;<VOLTAGE>==12.0									
+CALL_SUBSCRIPT	NAME			0	P01_step;;<VOLTAGE>==16.0									
+CALL_SUBSCRIPT	NAME			0	P01_step;;<VOLTAGE>==15.0									
+														
+VISA	EA1	0	0	0	SYSTem:LOCK ON; SYSTem:LOCK OFF									
+						==================================================================								
+STOP														

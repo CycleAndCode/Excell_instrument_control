@@ -1,0 +1,33 @@
+Interface	Address/ID	Read response?	Save response?	Wait after [s]	COMMAND	COMMENT	PROGRES	TIME	DATA	Respect limits?	Limit LO	Limit HI	Limit Status	LABEL
+						==================================================================								
+						TEST <VOLTAGE> V								
+VISA	HMP2	0	0	0	INSTrument OUT1	Reverse actuator current // Actuator Close // NA								
+VISA	HMP2	0	0	0	APPLy 12.1, 2.0									
+VISA	HMP2	0	0	2	OUTPut:SELect ON									
+														
+VISA	EA1	0	0	0	SYSTem:LOCK ON; SOURce:VOLTage <VOLTAGE>; SOUR:CURR 30.0									
+VISA	EA1	0	0	0	SYSTem:LOCK ON; SOURce:POWer MAX									
+VISA	EA1	0	0	2	SYSTem:LOCK ON; OUTPut ON									
+VISA	EA1	0	0	0	SYSTem:LOCK ON; OUTPut OFF									
+														
+						LIN voltage // Sensor voltage // LED voltage								
+VISA	HMP1	0	0	0	INSTrument OUT2	SENSOR								
+VISA	HMP1	0	0	0	APPLy  <VOLTAGE>, 3.0									
+VISA	HMP1	0	0	0	OUTPut:SELect ON									
+VISA	HMP1	0	0	0	INSTrument OUT3	LED								
+VISA	HMP1	0	0	0	APPLy  <VOLTAGE>, 5.0									
+VISA	HMP1	0	0	56	OUTPut:SELect ON									
+														
+VISA	HMP2	0	0	0	INSTrument OUT1	Reverse actuator current // Actuator Open // NA								
+VISA	HMP2	0	0	2	OUTPut:SELect OFF									
+														
+VISA	EA1	0	0	2	SYSTem:LOCK ON; OUTPut ON									
+VISA	EA1	0	0	56	SYSTem:LOCK ON; OUTPut OFF									
+														
+VISA	HMP1	0	0	0	INSTrument OUT2									
+VISA	HMP1	0	0	0	OUTPut:SELect OFF									
+VISA	HMP1	0	0	0	INSTrument OUT3									
+VISA	HMP1	0	0	0	OUTPut:SELect OFF									
+														
+						==================================================================								
+STOP														
